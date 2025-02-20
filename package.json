@@ -1,0 +1,19 @@
+{
+  "name": "my-docs-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "markdownlint '**/*.md'",
+    "lint:fix": "markdownlint --fix '**/*.md'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.20.1",
+    "eslint-plugin-markdown": "^5.1.0",
+    "markdownlint-cli": "^0.44.0"
+  }
+}

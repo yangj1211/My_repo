@@ -1,0 +1,995 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../test_sql/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>检查文档语法准确脚本 - HashData</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HashData" class="md-header__button md-logo" aria-label="HashData" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HashData
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              检查文档语法准确脚本
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HashData" class="md-nav__button md-logo" aria-label="HashData" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    HashData
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    测试题一
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            测试题一
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg_command_line_cn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PostgreSQL 命令使用介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pg_command_line_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PostgreSQL Commands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    测试题二
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            测试题二
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    检查内容准确脚本
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    检查文档语法准确脚本
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    检查文档语法准确脚本
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-mkdocs-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 安装 MkDocs 和 pnpm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 安装 MkDocs 和 pnpm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 安装 MkDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 安装 pnpm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 初始化项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 初始化项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 创建项目文件夹
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 初始化 MkDocs 项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 初始化 pnpm 项目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-markdownlint-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 安装 markdownlint 和 eslint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 安装 markdownlint 和 eslint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-markdownlint-cli-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 安装 markdownlint-cli 和 eslint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-markdownlint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 配置 markdownlint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 配置 package.json 脚本
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 创建测试脚本
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 使用 MkDocs 构建文档
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 使用 MkDocs 构建文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 启动 MkDocs 本地服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 构建静态网站
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 测试和修复文档格式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-mkdocs-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 安装 MkDocs 和 pnpm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 安装 MkDocs 和 pnpm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 安装 MkDocs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 安装 pnpm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 初始化项目
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 初始化项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 创建项目文件夹
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 初始化 MkDocs 项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-pnpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 初始化 pnpm 项目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-markdownlint-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 安装 markdownlint 和 eslint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 安装 markdownlint 和 eslint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-markdownlint-cli-eslint" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 安装 markdownlint-cli 和 eslint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-markdownlint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 配置 markdownlint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 配置 package.json 脚本
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 创建测试脚本
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 使用 MkDocs 构建文档
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 使用 MkDocs 构建文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 启动 MkDocs 本地服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 构建静态网站
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 测试和修复文档格式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">自动化文档检查</h1>
+<p>本章节将介绍如何使用 MkDocs 和 pnpm 来自动化文档检查。包括如何安装、创建文件夹、安装所需的工具以及如何构建和检查文档。</p>
+<h2 id="1-mkdocs-pnpm">1. 安装 MkDocs 和 pnpm</h2>
+<p>首先，我们需要安装 MkDocs 和 pnpm，并搭建一个基本的文档项目结构。</p>
+<h3 id="11-mkdocs">1.1 安装 MkDocs</h3>
+<p>MkDocs 是一个静态站点生成器，专门用于构建文档。你可以通过 <code>pip</code> 安装 MkDocs，也可以使用其他方法（如 Docker 或包管理器）。</p>
+<pre><code class="language-bash">pip install mkdocs
+</code></pre>
+<p>或者你也可以使用 Homebrew（如果在 macOS 上）来安装：</p>
+<pre><code class="language-bash">brew install mkdocs
+</code></pre>
+<p>安装后，你可以通过运行以下命令来确认是否安装成功：</p>
+<pre><code class="language-bash">mkdocs --version
+</code></pre>
+<h3 id="12-pnpm">1.2 安装 pnpm</h3>
+<p>pnpm 是一个快速、节省空间的包管理器，类似于 npm 或 yarn。首先安装 pnpm：</p>
+<pre><code class="language-bash">npm install -g pnpm
+</code></pre>
+<h2 id="2">2. 初始化项目</h2>
+<p>接下来，我们将初始化一个 MkDocs 项目和 pnpm 项目。</p>
+<h3 id="21">2.1 创建项目文件夹</h3>
+<p>在终端中，选择你想创建项目的位置，然后执行以下命令来创建一个新的文件夹并进入该文件夹。</p>
+<pre><code class="language-bash">mkdir my-docs-project
+cd my-docs-project
+</code></pre>
+<h3 id="22-mkdocs">2.2 初始化 MkDocs 项目</h3>
+<p>在你的项目文件夹中，执行以下命令来初始化一个新的 MkDocs 项目：</p>
+<pre><code class="language-bash">mkdocs new .
+</code></pre>
+<p>该命令会在当前文件夹下创建一个基本的 MkDocs 项目结构，包括：</p>
+<ul>
+<li><code>mkdocs.yml</code>：MkDocs 配置文件</li>
+<li><code>docs/</code>：文档目录，默认包含一个 <code>index.md</code> 文件</li>
+<li><code>site/</code>：构建输出目录，生成的 HTML 文件将在这里</li>
+</ul>
+<h3 id="23-pnpm">2.3 初始化 pnpm 项目</h3>
+<p>接下来，我们使用 pnpm 初始化一个新的 npm 项目。这是为了后续管理依赖和脚本。</p>
+<pre><code class="language-bash">pnpm init
+</code></pre>
+<p>根据提示填写项目的相关信息，最后会生成一个 <code>package.json</code> 文件。</p>
+<h2 id="3-markdownlint-eslint">3. 安装 markdownlint 和 eslint</h2>
+<p>为了确保文档的格式正确，我们将安装 <code>markdownlint</code>（用于 Markdown 格式检查）和 <code>eslint</code>（用于代码的格式检查）。</p>
+<h3 id="31-markdownlint-cli-eslint">3.1 安装 markdownlint-cli 和 eslint</h3>
+<p>使用 pnpm 安装以下开发依赖：</p>
+<pre><code class="language-bash">pnpm add -D markdownlint-cli eslint eslint-plugin-markdown
+</code></pre>
+<p>这会在你的项目中安装 <code>markdownlint-cli</code>、<code>eslint</code> 以及 <code>eslint-plugin-markdown</code>，后者用于检查 Markdown 文件中的代码块。</p>
+<h2 id="4-markdownlint">4. 配置 markdownlint</h2>
+<p>创建一个 <code>markdownlint.json</code> 配置文件，用于配置 Markdown 文件的检查规则。在项目根目录下创建一个 <code>.markdownlint.json</code> 文件，并添加以下内容：</p>
+<pre><code class="language-json">{
+  &quot;MD013&quot;: {
+    &quot;line_length&quot;: 80
+  },
+  &quot;MD029&quot;: true,
+  &quot;MD032&quot;: false
+}
+</code></pre>
+<p>这将配置以下规则：</p>
+<ul>
+<li><code>MD013</code>：行长度限制为 80 字符。</li>
+<li><code>MD029</code>：需要确保列表中的数字是按顺序排列的（例如：1. Item 1, 2. Item 2）。</li>
+<li><code>MD032</code>：false：禁用此规则，表示不会强制要求列表项后面必须有空行。例如，在列表项后可以没有额外的空行。</li>
+</ul>
+<p>根据实际情况可以配置更多检查规则，这里只做简单示例。</p>
+<h2 id="5-packagejson">5. 配置 package.json 脚本</h2>
+<p>在你的 <code>package.json</code> 文件中，配置用于检查和修复 Markdown 文件格式的脚本。</p>
+<p>编辑 <code>package.json</code>，添加以下 <code>scripts</code> 配置：</p>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;lint&quot;: &quot;markdownlint '**/*.md'&quot;,
+    &quot;lint:fix&quot;: &quot;markdownlint --fix '**/*.md'&quot;
+  }
+}
+</code></pre>
+<p>这将创建两个命令：</p>
+<ul>
+<li><code>pnpm run lint</code>：检查所有 Markdown 文件的格式。</li>
+<li><code>pnpm run lint:fix</code>：自动修复所有可以自动修复的格式问题。</li>
+</ul>
+<h2 id="6">6. 创建测试脚本</h2>
+<p>你可以编写一个简单的脚本，来自动化检查和修复 Markdown 文件的格式。</p>
+<p>创建一个名为 <code>lint.js</code> 的文件，内容如下：</p>
+<pre><code class="language-javascript">const { execSync } = require('child_process');
+const path = require('path');
+
+// 指定文档目录
+const docsPath = path.join(__dirname, 'docs');
+
+// 执行 lint 检查
+function runLint() {
+  console.log('Running markdownlint...');
+  try {
+    execSync(`pnpm run lint`, { stdio: 'inherit' });
+  } catch (err) {
+    console.error('Markdownlint found issues!');
+    process.exit(1);
+  }
+}
+
+// 执行 lint fix
+function runLintFix() {
+  console.log('Running lint:fix...');
+  try {
+    execSync(`pnpm run lint:fix`, { stdio: 'inherit' });
+  } catch (err) {
+    console.error('Error running lint:fix!');
+    process.exit(1);
+  }
+}
+
+// 主程序
+function main() {
+  // 执行 lint 检查
+  runLint();
+
+  // 执行 lint 修复
+  runLintFix();
+
+  console.log('Linting and fixing complete!');
+}
+
+// 运行主程序
+main();
+</code></pre>
+<h2 id="7-mkdocs">7. 使用 MkDocs 构建文档</h2>
+<h3 id="71-mkdocs">7.1 启动 MkDocs 本地服务器</h3>
+<p>运行以下命令启动 MkDocs 本地服务器：</p>
+<pre><code class="language-bash">mkdocs serve
+</code></pre>
+<p>这会在 <code>http://127.0.0.1:8000/</code> 启动一个本地开发服务器，您可以在浏览器中查看实时预览。</p>
+<h3 id="72">7.2 构建静态网站</h3>
+<p>一旦文档准备好，可以使用以下命令将其构建为静态 HTML 文件：</p>
+<pre><code class="language-bash">mkdocs build
+</code></pre>
+<p>构建后的文件将存储在 <code>site/</code> 文件夹中。</p>
+<h2 id="8">8. 测试和修复文档格式</h2>
+<p>运行以下命令来检查文档格式，并自动修复可以修复的问题：</p>
+<pre><code class="language-bash">node lint.js
+</code></pre>
+<p>如果有格式问题，它会输出相关错误并尝试修复。</p>
+<h2 id="_2">总结</h2>
+<p>现在，你已经成功设置了一个 MkDocs 项目，并使用 pnpm 管理项目依赖。同时，你已经添加了 Markdown 格式检查工具（<code>markdownlint</code>）以及自动修复功能。</p>
+<ul>
+<li><strong>MkDocs</strong> 用于构建文档网站。</li>
+<li><strong>pnpm</strong> 用于管理依赖。</li>
+<li><strong>markdownlint</strong> 用于自动化检查和修复 Markdown 文件格式。</li>
+</ul>
+<p>这样，你就可以高效地管理和维护文档，确保它们符合预定的格式规范。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

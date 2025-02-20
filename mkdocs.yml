@@ -1,0 +1,12 @@
+site_name: HashData
+theme:
+  name: material  # 使用 Material 主题
+  features:
+      - content.code.copy #启用代码块一键复制
+nav:
+  - 测试题一:
+    - PostgreSQL 命令使用介绍: Hashdata/pg_command_line_cn.md
+    - PostgreSQL Commands: Hashdata/pg_command_line_en.md
+  - 测试题二:
+    - 检查内容准确脚本: Hashdata/test_sql.md
+    - 检查文档语法准确脚本: Hashdata/test_grammer.md
