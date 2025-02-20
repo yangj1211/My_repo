@@ -1,6 +1,6 @@
 # HashData Documentation
 
-Hashdata 目录下g四个文件依次为：
+Hashdata 目录下四个文件依次为：
 
 -  PostgreSQL 命令行工具使用指南（中）
 -  PostgreSQL 命令行工具使用指南（英）
